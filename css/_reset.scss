@@ -1,0 +1,248 @@
+:root {
+  --white: #fff;
+  --black: #000;
+  --black-op40: rgba(0, 0, 0, 0.4);
+  --light-bgr: #f5f5f5;
+  --light-gray: #dfdfdf;
+  --text-dark: #232323;
+  --text-body: #454545;
+  --text-light: #868686;
+  --brand-color: #3d8c35;
+  --shadow-sucsess: rgb(61, 140, 53, 0.1);
+  --shadow-danger: rgb(229, 51, 51, 0.1);
+  --shadow-gray: rgb(0, 0, 0, 0.06);
+  --brand-color2: hsl(0, 41%, 28%);
+  --brand-food: hsl(24, 60%, 45%);
+  --red: rgb(229, 51, 51);
+  --sucsess: var(--brand-color);
+  --danger: var(--red);
+}
+
+@mixin generate($prefix, $property) {
+  // List of sizes to generate for each
+  $sizes: (0, 0.25, 0.5, 1, 1.5, 3);
+  // Spacing to multiply the sizes by
+  $spacing: 1rem;
+
+  // Check if we are generating a horizontal margin or padding utility class
+  @if $prefix == "mx" {
+    @for $i from 1 through length($sizes) {
+      // Get the size for the current index
+      $size: nth($sizes, $i);
+
+      // Create the mx utility class, which sets both margin-left and margin-right
+      .#{$prefix}-#{$i - 1} {
+        margin-left: $spacing * $size;
+        margin-right: $spacing * $size;
+      }
+    }
+  }
+
+  // Check if we are generating a vertical margin or padding utility class
+  @else if $prefix == "my" {
+    @for $i from 1 through length($sizes) {
+      // Get the size for the current index
+      $size: nth($sizes, $i);
+
+      // Create the my utility class, which sets both margin-top and margin-bottom
+      .#{$prefix}-#{$i - 1} {
+        margin-top: $spacing * $size;
+        margin-bottom: $spacing * $size;
+      }
+    }
+  }
+
+  // Check if we are generating a horizontal padding utility class
+  @else if $prefix == "px" {
+    @for $i from 1 through length($sizes) {
+      // Get the size for the current index
+      $size: nth($sizes, $i);
+
+      // Create the px utility class, which sets both padding-left and padding-right
+      .#{$prefix}-#{$i - 1} {
+        padding-left: $spacing * $size;
+        padding-right: $spacing * $size;
+      }
+    }
+  }
+
+  // Check if we are generating a vertical padding utility class
+  @else if $prefix == "py" {
+    @for $i from 1 through length($sizes) {
+      // Get the size for the current index
+      $size: nth($sizes, $i);
+
+      // Create the py utility class, which sets both padding-top and padding-bottom
+      .#{$prefix}-#{$i - 1} {
+        padding-top: $spacing * $size;
+        padding-bottom: $spacing * $size;
+      }
+    }
+  } @else {
+    // Loop through all of the sizes (we use @for rather than @each, as we want access to the index)
+    @for $i from 1 through length($sizes) {
+      // Get the size for the current index
+      $size: nth($sizes, $i);
+
+      // Create the rule, note that Sass uses 1-based indexing, so the first item has an index of 1, not 0
+      .#{$prefix}-#{$i - 1} {
+        #{$property}: $spacing * $size;
+      }
+    }
+  }
+}
+
+// Update the $rules list to include 'px' and 'py'
+$rules: (
+  m margin,
+  ml margin-left,
+  mt margin-top,
+  mb margin-bottom,
+  mr margin-right,
+  mx margin,
+  my margin,
+  // class
+  p padding,
+  pl padding-left,
+  pt padding-top,
+  pb padding-bottom,
+  pr padding-right,
+  px padding,
+  py padding,
+  // class
+  rounded border-radius
+);
+
+@each $label, $prop in $rules {
+  @include generate($label, $prop);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  line-height: 1.4;
+  font-style: normal;
+  color: var(--text-body);
+}
+
+.color-dark {
+  color: var(--text-dark);
+}
+
+.color-primary {
+  color: var(--brand-color);
+}
+
+.color-primary2 {
+  color: var(--brand-color2);
+}
+
+.color-red {
+  color: var(--red);
+}
+
+.d-block {
+  display: block;
+}
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-start {
+  align-items: start;
+}
+
+.align-items-end {
+  align-items: end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-start {
+  justify-content: start;
+}
+
+.justify-content-end {
+  justify-content: end;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-evenly {
+  justify-content: space-evenly;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-start {
+  text-align: left;
+}
+
+.text-end {
+  text-align: right;
+}
+
+.mx-auto {
+  margin: 0 auto;
+}
+
+small,
+.small {
+  font-size: 80%;
+}
+.w-100 {
+  width: 100%;
+}
+.maxw-100{
+    max-width: 100%;
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking app</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+</head>
+
+<body>
+  <header>
+    <div class="header container">
+      <div class="d-flex justify-content-center py-3">
+        <button class="btn back btn-secondary category-more-btn">
+          <svg t="1586141872496" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="1458" width="24" height="24">
+            <path d="M689.621 512l-328.832-328.832-60.331 60.331 268.501 268.501-268.501 268.501 60.331 60.331z"
+              p-id="1459"></path>
+          </svg>
+        </button>
+        <img class="logo" src="https://maichau.ecolodge.asia/images/icon/logo.png" alt="logo">
+      </div>
+      <div class="banner">
+        <div class="section">
+          <div class="container">
+            <img class="maxw-100 rounded-4" src="https://placehold.jp/640x480.png" class="people__card__image" />
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="main list-service">
+      <h2 class="mx-3 mt-4 mb-1 color-primary">Món Á</h2>
+      <ul class="restaurant-list">
+        <li class="restaurant-list__item">
+          <a href="#" id="myBtn"><span class="restaurant-image d-block"
+              style="background-image: url(https://placehold.jp/640x480.png);"></span></a>
+          <div class="restaurant-info">
+            <a href="#" class="restaurant-name">Bagel Story</a>
+            <span class="restaurant-category">Dự kiến: 10 - 15 munite</span>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="restaurant-price">40,000đ/c</span>
+
+              <div class="input-group input-spinner">
+
+                <a class="btn minus" onclick="document.querySelector('#count').value--">
+                  <svg t="1585835162360" class="icon" viewBox="0 0 1025 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="3867" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M973.154 563.218 51.222 563.218c-28.275 0-51.222-22.946-51.222-51.214 0-28.276 22.946-51.222 51.222-51.222L973.154 460.782c28.33 0 51.222 22.946 51.222 51.222C1024.375 540.272 1001.484 563.218 973.154 563.218L973.154 563.218z"
+                      p-id="3868"></path>
+                  </svg>
+                </a>
+                <input type="text" readonly="" value="1" class="form-control" id="count">
+                <a class="btn plus" onclick="document.querySelector('#count').value++">
+                  <svg t="1585835178245" class="icon" fill="currentColor" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="1204" width="14" height="14">
+                    <path
+                      d="M970.745 459.367 566.614 459.367 566.614 55.251C566.614 25.842 542.771 2 513.361 2c-29.411 0-53.253 23.841-53.253 53.251l0 404.116L55.975 459.367c-29.411 0-53.253 23.841-53.253 53.25 0 29.41 23.842 53.253 53.253 53.253l404.133 0 0 404.115c0 29.407 23.842 53.249 53.253 53.249 29.41 0 53.253-23.842 53.253-53.249L566.614 565.87l404.131 0c29.413 0 53.255-23.843 53.255-53.253C1024 483.208 1000.158 459.367 970.745 459.367z"
+                      p-id="1205"></path>
+                  </svg>
+                </a>
+              </div>
+              <a class="btn add">
+                <svg t="1585835178245" class="icon" fill="currentColor" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="1204" width="14" height="14">
+                  <path
+                    d="M970.745 459.367 566.614 459.367 566.614 55.251C566.614 25.842 542.771 2 513.361 2c-29.411 0-53.253 23.841-53.253 53.251l0 404.116L55.975 459.367c-29.411 0-53.253 23.841-53.253 53.25 0 29.41 23.842 53.253 53.253 53.253l404.133 0 0 404.115c0 29.407 23.842 53.249 53.253 53.249 29.41 0 53.253-23.842 53.253-53.249L566.614 565.87l404.131 0c29.413 0 53.255-23.843 53.255-53.253C1024 483.208 1000.158 459.367 970.745 459.367z"
+                    p-id="1205"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </main>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+
+      <span class="close">&times;</span>
+      <img class="maxw-100 rounded-4" src="https://placehold.jp/640x480.png" class="people__card__image" />
+      <h2 class="mt-3 mb-2 color-primary">Bagel Story</h2>
+      <span class="restaurant-category">Dự kiến: 10 - 15 munite</span>
+      <div class="d-flex justify-content-between align-items-center">
+        <span class="restaurant-price">40,000đ/c</span>
+
+        <div class="input-group input-spinner">
+
+          <a class="btn minus" onclick="document.querySelector('#count').value--">
+            <svg t="1585835162360" class="icon" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              p-id="3867" width="14" height="14" fill="currentColor">
+              <path
+                d="M973.154 563.218 51.222 563.218c-28.275 0-51.222-22.946-51.222-51.214 0-28.276 22.946-51.222 51.222-51.222L973.154 460.782c28.33 0 51.222 22.946 51.222 51.222C1024.375 540.272 1001.484 563.218 973.154 563.218L973.154 563.218z"
+                p-id="3868"></path>
+            </svg>
+          </a>
+          <input type="text" readonly="" value="1" class="form-control" id="count">
+          <a class="btn plus" onclick="document.querySelector('#count').value++">
+            <svg t="1585835178245" class="icon" fill="currentColor" viewBox="0 0 1024 1024" version="1.1"
+              xmlns="http://www.w3.org/2000/svg" p-id="1204" width="14" height="14">
+              <path
+                d="M970.745 459.367 566.614 459.367 566.614 55.251C566.614 25.842 542.771 2 513.361 2c-29.411 0-53.253 23.841-53.253 53.251l0 404.116L55.975 459.367c-29.411 0-53.253 23.841-53.253 53.25 0 29.41 23.842 53.253 53.253 53.253l404.133 0 0 404.115c0 29.407 23.842 53.249 53.253 53.249 29.41 0 53.253-23.842 53.253-53.249L566.614 565.87l404.131 0c29.413 0 53.255-23.843 53.255-53.253C1024 483.208 1000.158 459.367 970.745 459.367z"
+                p-id="1205"></path>
+            </svg>
+          </a>
+        </div>
+        <span class="d-flex flex-column align-items-end">
+          <small>           
+            Thành tiền
+          </small>
+          <h3 class="total-items-price">320,000đ</h3>
+        </span>
+      </div>
+      <a class="btn-food mt-3 w-100">       
+           <svg t="1585835178245" class="icon" fill="currentColor" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1204" width="14" height="14">
+                  <path d="M970.745 459.367 566.614 459.367 566.614 55.251C566.614 25.842 542.771 2 513.361 2c-29.411 0-53.253 23.841-53.253 53.251l0 404.116L55.975 459.367c-29.411 0-53.253 23.841-53.253 53.25 0 29.41 23.842 53.253 53.253 53.253l404.133 0 0 404.115c0 29.407 23.842 53.249 53.253 53.249 29.41 0 53.253-23.842 53.253-53.249L566.614 565.87l404.131 0c29.413 0 53.255-23.843 53.255-53.253C1024 483.208 1000.158 459.367 970.745 459.367z" p-id="1205"></path>
+                </svg>
+                Add to order
+        </a>
+    </div>
+
+  </div>
+  <div class="button-cart">
+    <div class="icon-cart">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="fi_5919333"
+        x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve" width="40" height="40">
+        <path
+          d="M9.917,10.01c0,0-0.001,0-0.001,0L4.999,9.998C4.723,9.997,4.5,9.772,4.5,9.496c0-0.275,0.225-0.499,0.5-0.499  c0,0,0.001,0,0.001,0L9.918,9.01c0.276,0,0.499,0.225,0.499,0.501C10.417,9.787,10.192,10.01,9.917,10.01z">
+        </path>
+        <path d="M9.917,9.51"></path>
+        <path
+          d="M26.281,14.732c-0.025,0-0.051-0.002-0.077-0.006c-0.273-0.042-0.46-0.297-0.418-0.57l0.371-2.408  c0.057-0.371-0.057-0.745-0.32-1.053c-0.347-0.405-0.913-0.648-1.513-0.65l-1.2-0.003c-0.276,0-0.499-0.225-0.499-0.501  c0-0.275,0.225-0.499,0.5-0.499c0,0,0.001,0,0.001,0l1.2,0.003c0.9,0.002,1.728,0.367,2.27,1c0.456,0.533,0.651,1.191,0.549,1.855  l-0.371,2.409C26.736,14.555,26.523,14.732,26.281,14.732z">
+        </path>
+        <path
+          d="M22.008,23.063H8.412c-2.157,0-3.912-1.536-3.912-3.423V5.5H2C1.724,5.5,1.5,5.276,1.5,5S1.724,4.5,2,4.5h3  c0.276,0,0.5,0.224,0.5,0.5v14.64c0,1.336,1.306,2.423,2.912,2.423h13.596c1.461,0,2.703-0.91,2.889-2.118l0.514-3.343  c0.042-0.273,0.297-0.459,0.57-0.418c0.273,0.042,0.46,0.297,0.418,0.57l-0.514,3.343C25.625,21.788,23.958,23.063,22.008,23.063z">
+        </path>
+        <path
+          d="M25.171,27.5h-0.609c-0.276,0-0.5-0.224-0.5-0.5s0.224-0.5,0.5-0.5h0.609c0.276,0,0.5,0.224,0.5,0.5  S25.448,27.5,25.171,27.5z">
+        </path>
+        <path d="M17.281,27"></path>
+        <path
+          d="M17.281,27.5h-4.573c-0.276,0-0.5-0.224-0.5-0.5s0.224-0.5,0.5-0.5h4.573c0.276,0,0.5,0.224,0.5,0.5  S17.558,27.5,17.281,27.5z">
+        </path>
+        <path d="M12.333,27"></path>
+        <path d="M5.936,26.61"></path>
+        <path
+          d="M5.936,27.11c-0.102,0-0.205-0.031-0.293-0.096C4.927,26.495,4.5,25.637,4.5,24.719v-0.656c0-0.276,0.224-0.5,0.5-0.5  s0.5,0.224,0.5,0.5v0.656c0,0.599,0.273,1.155,0.73,1.487c0.223,0.162,0.273,0.475,0.11,0.698C6.243,27.039,6.09,27.11,5.936,27.11z  ">
+        </path>
+        <g>
+          <path
+            d="M9.242,29.5c-1.378,0-2.5-1.122-2.5-2.5s1.122-2.5,2.5-2.5s2.5,1.122,2.5,2.5S10.62,29.5,9.242,29.5z M9.242,25.5   c-0.827,0-1.5,0.673-1.5,1.5s0.673,1.5,1.5,1.5s1.5-0.673,1.5-1.5S10.069,25.5,9.242,25.5z">
+          </path>
+        </g>
+        <g>
+          <g>
+            <path
+              d="M20.929,29.5c-1.378,0-2.5-1.122-2.5-2.5s1.122-2.5,2.5-2.5s2.5,1.122,2.5,2.5S22.308,29.5,20.929,29.5z M20.929,25.5    c-0.827,0-1.5,0.673-1.5,1.5s0.673,1.5,1.5,1.5s1.5-0.673,1.5-1.5S21.756,25.5,20.929,25.5z">
+            </path>
+          </g>
+        </g>
+        <path
+          d="M10.979,14.867c-0.134,0-0.263-0.054-0.357-0.15c-0.095-0.097-0.146-0.229-0.143-0.365c0.01-0.299,0.253-7.354,2.321-9.379  c1.023-1.001,2.374-1.552,3.805-1.552c1.474,0,2.854,0.58,3.885,1.633c1.016,1.038,1.567,2.409,1.552,3.861  c-0.015,1.453-0.595,2.812-1.632,3.829c-2.068,2.025-9.126,2.122-9.425,2.125C10.982,14.867,10.98,14.867,10.979,14.867z   M16.604,4.42c-1.167,0-2.271,0.45-3.105,1.267c-1.361,1.333-1.877,5.937-1.998,8.168c2.233-0.075,6.848-0.495,8.208-1.828  c0.847-0.829,1.32-1.939,1.333-3.124c0.013-1.185-0.438-2.304-1.267-3.151C18.933,4.893,17.808,4.42,16.604,4.42z">
+        </path>
+        <path
+          d="M15.837,9.833c-0.128,0-0.256-0.049-0.354-0.146c-0.195-0.195-0.195-0.512,0-0.707l6.762-6.762  c0.195-0.195,0.512-0.195,0.707,0s0.195,0.512,0,0.707l-6.762,6.762C16.093,9.784,15.965,9.833,15.837,9.833z">
+        </path>
+      </svg>
+      <span class="number">12</span>
+    </div>
+    <div class="total-price">
+      <div class="d-flex flex-column">
+        <small>Tổng tiền</small>
+        <span class="price">323,000 đ</span>
+      </div>
+      <svg width="24" height="24" class="arrow" viewBox="0 0 24 24">
+        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+      </svg>
+    </div>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

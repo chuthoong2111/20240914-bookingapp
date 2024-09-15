@@ -1,0 +1,42 @@
+.footer {
+    padding: 3rem 1rem;
+    font-size: 90%;
+    color: #888;
+    max-width: 640px;
+    margin: 0 auto;
+
+    h5 {
+        text-transform: uppercase;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--brand-color);
+
+        &:hover {
+            color: var(--brand-color2);
+        }
+    }
+}
+
+.all-logo {
+    padding: 2rem 0 0;
+    background-color: var(--light-bgr);
+
+    .bg-primary {
+        padding: 2rem 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        background-color: var(--brand-color);
+    }
+
+    img {
+        height: 9vw;
+        object-fit: cover;
+
+        @media (min-width: 960px) {
+            height: 72px;
+        }
+    }
+}

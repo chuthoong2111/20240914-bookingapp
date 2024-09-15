@@ -1,0 +1,122 @@
+/* The Modal (background) */
+.modal {
+display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1006;
+    /* Sit on top */
+    padding-top: 0;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 1rem;
+    border: 1px solid #888;
+    width: calc(100vw);
+    max-width: 640px;
+    height: calc(100vh);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.03);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {
+        right: -200px;
+        opacity: 0
+    }
+
+    to {
+        right: 0;
+        opacity: 1
+    }
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: normal;
+    margin-bottom: 1rem;
+    background: var(--light-bgr);
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-content {
+    .restaurant-category + .d-flex{
+        flex-wrap: wrap;
+    }
+        .restaurant-category{
+            font-size: 1rem;
+            margin-bottom: 1rem;display: block;
+        }
+    .restaurant-price{
+        width:  100%;
+        padding-bottom: 1rem;
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid var(--light-gray);
+    }
+    .input-spinner{
+        width: 50%;
+        .btn{
+            width: 3.5rem;
+            height: 3.5rem;
+            svg{
+                width: 1rem;
+                height: 1rem;
+            }
+        }
+         .form-control{
+            font-size: 1.2rem;
+            max-width: 4rem;
+         }
+    }
+}
+.btn-food{
+    border-radius: .5rem;
+    background-color: var(--brand-food);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:  1rem;
+    gap: .5rem;
+    align-items: center;
+    width: 100%;
+    .total-items-price{
+        font-size: .8rem;
+        font-weight: 400;
+    }
+}
