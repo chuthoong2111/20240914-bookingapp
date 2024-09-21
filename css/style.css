@@ -778,6 +778,7 @@ img {
   transition: 0.3s;
 }
 .category-list__item svg {
+  margin-top: 0.75rem;
   width: 2.5rem;
   height: 2.5rem;
 }
@@ -805,6 +806,7 @@ img {
   padding: 1rem 0 1.5rem;
   text-align: center;
   color: black;
+  font-size: 80%;
 }
 .category-list__item:target {
   background: var(--warning-color);
@@ -1058,7 +1060,7 @@ img {
   align-items: center;
 }
 .button-cart .total-price .price {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 .button-cart .icon-cart {
