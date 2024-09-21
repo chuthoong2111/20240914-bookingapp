@@ -69,5 +69,55 @@
 
 body:has(.button-cart) {
   position: relative;
-  padding-bottom: 5rem;
+  padding-bottom: 6rem;
+  position: relative;
+}
+.bar-title{
+  border: 1px solid var(--light-gray);
+  border-width: 1px 0;
+  padding:.75rem 1rem;
+  background-color: var(--light-bgr);
+}
+.popup-question{
+  background: var(--white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 2rem;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 0 1rem var(--shadow-gray);
+  
+  overflow: hidden;
+  .content{
+    font-weight: 500;
+    padding: 2rem;
+  }
+  .btn-popup{
+    flex-basis: 50%;
+    padding: 1rem 2rem;
+    color: var(--black-op40);
+    background: var(--light-bgr);
+    + .btn-popup{
+      background: var(--brand-food);
+      color: #fff;
+    }
+  }
+}
+.form-group{
+  margin: 1rem 0;
+  +.form-group{
+    margin: 0 0 1rem;
+  }
+  label{
+    min-width: 80px;
+    white-space: nowrap;
+  }
+}
+.form-control{
+  border: 1px solid var(--light-gray);
+  padding: .75rem 1rem;
+  border-radius: .75rem;
+  font-size: 1rem;
 }

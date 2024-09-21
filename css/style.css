@@ -13,9 +13,13 @@
   --shadow-gray: rgb(0, 0, 0, 0.06);
   --brand-color2: hsl(0, 41%, 28%);
   --brand-food: hsl(24, 60%, 45%);
-  --red: rgb(229, 51, 51);
+  --red: #FF5A54;
   --sucsess: var(--brand-color);
   --danger: var(--red);
+}
+
+body {
+  min-height: 100vh;
 }
 
 .m-0 {
@@ -535,6 +539,18 @@ small,
   max-width: 100%;
 }
 
+.container-fluid {
+  padding: 0 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.delete {
+  color: var(--red);
+}
+
 .section {
   justify-content: center;
   align-items: center;
@@ -832,21 +848,34 @@ small,
   border-bottom: 1px solid var(--light-bgr);
   display: flex;
 }
+.restaurant-list__item a {
+  text-decoration: none;
+}
 .restaurant-list__item .restaurant-image {
   border: 0;
-  width: 6rem;
-  height: 6rem;
+  width: 5.2rem;
+  height: 5.2rem;
   border-radius: 1rem;
   -o-object-fit: cover;
      object-fit: cover;
   background-size: cover;
   background-position: center;
 }
+.cart .restaurant-list__item .restaurant-image {
+  width: 4.4rem;
+  height: 4.4rem;
+}
+.restaurant-list__item a.edit {
+  color: var(--brand-food);
+  padding: 0.5rem 0 0;
+}
 .restaurant-list__item .restaurant-name {
-  margin-bottom: 0.25rem;
   font-weight: 700;
   color: var(--text-dark);
   text-decoration: none;
+}
+.cart .restaurant-list__item .restaurant-name span {
+  color: var(--brand-food);
 }
 .restaurant-list__item .restaurant-info {
   margin: 0.25rem 1rem;
@@ -854,6 +883,7 @@ small,
   gap: 0.25rem;
   flex-direction: column;
   width: 100%;
+  position: relative;
 }
 .restaurant-list__item .restaurant-info .btn {
   display: flex;
@@ -878,6 +908,19 @@ small,
 .restaurant-list__item .restaurant-info .btn.add svg {
   fill: var(--white);
 }
+.restaurant-list__item .restaurant-info .btn.delete {
+  height: auto;
+  width: auto;
+  padding: 0.25rem;
+  position: absolute;
+  right: -0.25rem;
+  top: -0.25rem;
+}
+.restaurant-list__item .restaurant-info .btn.delete svg {
+  width: 1rem;
+  height: 1rem;
+  fill: var(--black-op20);
+}
 .restaurant-list__item .restaurant-rate {
   margin-right: 9px;
 }
@@ -893,10 +936,16 @@ small,
   color: var(--text-light);
   font-size: 0.9rem;
 }
+.cart .restaurant-category {
+  display: none;
+}
 
 .restaurant-price {
   color: var(--brand-food);
   font-weight: 400;
+}
+.cart .restaurant-price {
+  color: var(--black-op40);
 }
 
 .input-spinner {
@@ -943,6 +992,17 @@ small,
 .list-service {
   max-width: 40rem;
   margin: 0 auto;
+}
+
+.loading-add {
+  background: var(--black-op40);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  position: absolute;
+  bottom: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .footer {
@@ -1047,7 +1107,60 @@ small,
 
 body:has(.button-cart) {
   position: relative;
-  padding-bottom: 5rem;
+  padding-bottom: 6rem;
+  position: relative;
+}
+
+.bar-title {
+  border: 1px solid var(--light-gray);
+  border-width: 1px 0;
+  padding: 0.75rem 1rem;
+  background-color: var(--light-bgr);
+}
+
+.popup-question {
+  background: var(--white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2rem;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 0 1rem var(--shadow-gray);
+  overflow: hidden;
+}
+.popup-question .content {
+  font-weight: 500;
+  padding: 2rem;
+}
+.popup-question .btn-popup {
+  flex-basis: 50%;
+  padding: 1rem 2rem;
+  color: var(--black-op40);
+  background: var(--light-bgr);
+}
+.popup-question .btn-popup + .btn-popup {
+  background: var(--brand-food);
+  color: #fff;
+}
+
+.form-group {
+  margin: 1rem 0;
+}
+.form-group + .form-group {
+  margin: 0 0 1rem;
+}
+.form-group label {
+  min-width: 80px;
+  white-space: nowrap;
+}
+
+.form-control {
+  border: 1px solid var(--light-gray);
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
 }
 
 /* The Modal (background) */

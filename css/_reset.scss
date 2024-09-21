@@ -13,11 +13,13 @@
   --shadow-gray: rgb(0, 0, 0, 0.06);
   --brand-color2: hsl(0, 41%, 28%);
   --brand-food: hsl(24, 60%, 45%);
-  --red: rgb(229, 51, 51);
+  --red: #FF5A54;
   --sucsess: var(--brand-color);
   --danger: var(--red);
 }
-
+body{
+  min-height: 100vh;
+}
 @mixin generate($prefix, $property) {
   // List of sizes to generate for each
   $sizes: (0, 0.25, 0.5, 1, 1.5, 3);
@@ -245,4 +247,13 @@ small,
 }
 .maxw-100{
     max-width: 100%;
+}
+.container-fluid{
+  padding: 0 1rem;
+}
+a{
+  text-decoration: none;
+}
+a.delete{
+  color: var(--red);
 }
