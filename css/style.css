@@ -18,10 +18,6 @@
   --danger: var(--red);
 }
 
-body {
-  min-height: 100vh;
-}
-
 .m-0 {
   margin: 0rem;
 }
@@ -420,6 +416,7 @@ body {
   line-height: 1.4;
   font-style: normal;
   color: var(--text-body);
+  min-height: 100vh;
 }
 
 .color-dark {
@@ -551,6 +548,12 @@ a.delete {
   color: var(--red);
 }
 
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+}
+
 .section {
   justify-content: center;
   align-items: center;
@@ -563,9 +566,7 @@ a.delete {
   max-width: 1920px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 0.5rem;
-  justify-content: center;
-  display: flex;
+  padding: 0 1rem;
 }
 
 .swiper-wrapper {
@@ -576,11 +577,6 @@ a.delete {
 
 .swiper-slide {
   flex: none;
-}
-.swiper-slide img {
-  max-width: 100%;
-  vertical-align: middle;
-  display: inline-block;
 }
 .swiper-slide .people__card {
   position: relative;
@@ -658,7 +654,7 @@ a.delete {
 }
 .swiper-slide .people__card .people__card__content .slide__title {
   margin-bottom: 20px;
-  font-size: 3em;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.03em;
@@ -666,12 +662,12 @@ a.delete {
 }
 @media (max-width: 1199px) {
   .swiper-slide .people__card .people__card__content .slide__title {
-    font-size: 2.4em;
+    font-size: 2.4rem;
   }
 }
 @media (max-width: 767px) {
   .swiper-slide .people__card .people__card__content .slide__title {
-    font-size: 1.92em;
+    font-size: 1.5rem;
   }
 }
 .swiper-slide .people__card .people__card__content .slide__subtitle {
@@ -757,19 +753,6 @@ a.delete {
   transform: translateX(100px);
 }
 
-.btn-secondary {
-  background-color: var(--light-bgr);
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-  width: 3rem;
-  height: 3rem;
-  border: 0;
-}
-.btn-secondary svg {
-  transform: rotate(180deg);
-}
-
 .categories {
   display: flex;
   justify-content: center;
@@ -793,6 +776,10 @@ a.delete {
   border-radius: 1rem;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.05);
   transition: 0.3s;
+}
+.category-list__item svg {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 .category-list__item a {
   display: flex;
@@ -913,7 +900,7 @@ a.delete {
   width: auto;
   padding: 0.25rem;
   position: absolute;
-  right: -0.25rem;
+  right: -1.5rem;
   top: -0.25rem;
 }
 .restaurant-list__item .restaurant-info .btn.delete svg {
@@ -1161,6 +1148,7 @@ body:has(.button-cart) {
   padding: 0.75rem 1rem;
   border-radius: 0.75rem;
   font-size: 1rem;
+  font-family: "Inter", sans-serif;
 }
 
 /* The Modal (background) */
