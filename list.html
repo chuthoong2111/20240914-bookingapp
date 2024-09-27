@@ -25,7 +25,7 @@
       </div>
       <div class="banner">
         <div class="section">
-          <div class="container">
+          <div class="container text-center">
             <img class="maxw-100 rounded-4" src="https://placehold.jp/600x400.png" class="people__card__image" />
 
           </div>
@@ -34,14 +34,73 @@
     </div>
   </header>
   <main>
+    
+    
+    <div id="modal-id" class="modal">
+      <div class="modal-window modal-top">
+        <div class="close-modal" data-dismiss="modal">&times;</div>
+         <!-- Modal content -->
+  <div class="modal-content">
+    <img class="maxw-100 rounded-4" src="https://placehold.jp/640x480.png" class="people__card__image" />
+    <h2 class="mt-3 mb-2 color-primary">Bagel Story</h2>
+    <span class="restaurant-category">Dự kiến: 10 - 15 munite</span>
+    
+    <div class="d-flex justify-content-between align-items-center">
+      <span class="restaurant-price">40,000đ/c</span>
+      
+      <div class="input-group input-spinner">
+
+        <a class="btn minus" onclick="document.querySelector('#count').value--">
+          <svg t="1585835162360" class="icon" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="3867" width="14" height="14" fill="currentColor">
+            <path
+              d="M973.154 563.218 51.222 563.218c-28.275 0-51.222-22.946-51.222-51.214 0-28.276 22.946-51.222 51.222-51.222L973.154 460.782c28.33 0 51.222 22.946 51.222 51.222C1024.375 540.272 1001.484 563.218 973.154 563.218L973.154 563.218z"
+              p-id="3868"></path>
+          </svg>
+        </a>
+        <input type="text" readonly="" value="1" class="form-control" id="count">
+        <a class="btn plus" onclick="document.querySelector('#count').value++">
+          <svg t="1585835178245" class="icon" fill="currentColor" viewBox="0 0 1024 1024" version="1.1"
+            xmlns="http://www.w3.org/2000/svg" p-id="1204" width="14" height="14">
+            <path
+              d="M970.745 459.367 566.614 459.367 566.614 55.251C566.614 25.842 542.771 2 513.361 2c-29.411 0-53.253 23.841-53.253 53.251l0 404.116L55.975 459.367c-29.411 0-53.253 23.841-53.253 53.25 0 29.41 23.842 53.253 53.253 53.253l404.133 0 0 404.115c0 29.407 23.842 53.249 53.253 53.249 29.41 0 53.253-23.842 53.253-53.249L566.614 565.87l404.131 0c29.413 0 53.255-23.843 53.255-53.253C1024 483.208 1000.158 459.367 970.745 459.367z"
+              p-id="1205"></path>
+          </svg>
+        </a>
+      </div>
+      <span class="d-flex flex-column align-items-end">
+        <small>           
+          Thành tiền
+        </small>
+        <h3 class="total-items-price">320,000đ</h3>
+      </span>
+    </div>
+     <a class="btn-food mt-3 mb-4 w-100">
+      <svg t="1585835178245" class="icon" fill="currentColor" viewBox="0 0 1024 1024" version="1.1"
+        xmlns="http://www.w3.org/2000/svg" p-id="1204" width="14" height="14">
+        <path
+          d="M970.745 459.367 566.614 459.367 566.614 55.251C566.614 25.842 542.771 2 513.361 2c-29.411 0-53.253 23.841-53.253 53.251l0 404.116L55.975 459.367c-29.411 0-53.253 23.841-53.253 53.25 0 29.41 23.842 53.253 53.253 53.253l404.133 0 0 404.115c0 29.407 23.842 53.249 53.253 53.249 29.41 0 53.253-23.842 53.253-53.249L566.614 565.87l404.131 0c29.413 0 53.255-23.843 53.255-53.253C1024 483.208 1000.158 459.367 970.745 459.367z"
+          p-id="1205"></path>
+      </svg>
+      Add to order
+    </a>
+    <div class="dec">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus exercitationem possimus dicta saepe voluptates, corrupti aliquid, commodi molestias nisi rerum incidunt esse nulla odit minus quae excepturi repellat id. Veritatis.</div>
+  </div>
+      </div>
+    </div>
+  
+    <br><br><br>
     <div class="main list-service">
       <h4 class="mx-3 mt-4 mb-0 color-primary">Món Á</h4>
       <ul class="restaurant-list">
         <li class="restaurant-list__item">
-          <a href="#" id="myBtn"><span class="restaurant-image d-block"
+         
+          <a data-target="modal-id" data-toggle="modal"
+          data-dimensions="width:86vw; height:80vh"><span class="restaurant-image d-block"
               style="background-image: url(https://placehold.jp/640x480.png);"></span></a>
           <div class="restaurant-info">
-            <a href="#" class="restaurant-name">Bagel Story</a>
+            <a data-target="modal-id" data-toggle="modal"
+            data-dimensions="width:86vw; height:80vh" class="restaurant-name">Bagel Story</a>
             <div class="restaurant-category">Dự kiến: 10 - 15 munite</div>
             <div class="d-flex justify-content-between align-items-center">
               <span class="restaurant-price">40,000đ/c</span>
@@ -65,73 +124,23 @@
                       p-id="1205"></path>
                   </svg>
                 </a>
+                <a class="btn add ml-3">
+                  <svg t="1585835178245" class="icon" fill="currentColor" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="1204" width="14" height="14">
+                    <path
+                      d="M970.745 459.367 566.614 459.367 566.614 55.251C566.614 25.842 542.771 2 513.361 2c-29.411 0-53.253 23.841-53.253 53.251l0 404.116L55.975 459.367c-29.411 0-53.253 23.841-53.253 53.25 0 29.41 23.842 53.253 53.253 53.253l404.133 0 0 404.115c0 29.407 23.842 53.249 53.253 53.249 29.41 0 53.253-23.842 53.253-53.249L566.614 565.87l404.131 0c29.413 0 53.255-23.843 53.255-53.253C1024 483.208 1000.158 459.367 970.745 459.367z"
+                      p-id="1205"></path>
+                  </svg>
+                </a>
               </div>              
-              <a class="btn add">
-                <svg t="1585835178245" class="icon" fill="currentColor" viewBox="0 0 1024 1024" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" p-id="1204" width="14" height="14">
-                  <path
-                    d="M970.745 459.367 566.614 459.367 566.614 55.251C566.614 25.842 542.771 2 513.361 2c-29.411 0-53.253 23.841-53.253 53.251l0 404.116L55.975 459.367c-29.411 0-53.253 23.841-53.253 53.25 0 29.41 23.842 53.253 53.253 53.253l404.133 0 0 404.115c0 29.407 23.842 53.249 53.253 53.249 29.41 0 53.253-23.842 53.253-53.249L566.614 565.87l404.131 0c29.413 0 53.255-23.843 53.255-53.253C1024 483.208 1000.158 459.367 970.745 459.367z"
-                    p-id="1205"></path>
-                </svg>
-              </a>
+              
             </div>
           </div>
         </li>
       </ul>
     </div>
   </main>
-  <!-- The Modal -->
-  <div id="myModal" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-
-      <span class="close">&times;</span>
-      <img class="maxw-100 rounded-4" src="https://placehold.jp/640x480.png" class="people__card__image" />
-      <h2 class="mt-3 mb-2 color-primary">Bagel Story</h2>
-      <span class="restaurant-category">Dự kiến: 10 - 15 munite</span>
-      <div class="d-flex justify-content-between align-items-center">
-        <span class="restaurant-price">40,000đ/c</span>
-
-        <div class="input-group input-spinner">
-
-          <a class="btn minus" onclick="document.querySelector('#count').value--">
-            <svg t="1585835162360" class="icon" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-              p-id="3867" width="14" height="14" fill="currentColor">
-              <path
-                d="M973.154 563.218 51.222 563.218c-28.275 0-51.222-22.946-51.222-51.214 0-28.276 22.946-51.222 51.222-51.222L973.154 460.782c28.33 0 51.222 22.946 51.222 51.222C1024.375 540.272 1001.484 563.218 973.154 563.218L973.154 563.218z"
-                p-id="3868"></path>
-            </svg>
-          </a>
-          <input type="text" readonly="" value="1" class="form-control" id="count">
-          <a class="btn plus" onclick="document.querySelector('#count').value++">
-            <svg t="1585835178245" class="icon" fill="currentColor" viewBox="0 0 1024 1024" version="1.1"
-              xmlns="http://www.w3.org/2000/svg" p-id="1204" width="14" height="14">
-              <path
-                d="M970.745 459.367 566.614 459.367 566.614 55.251C566.614 25.842 542.771 2 513.361 2c-29.411 0-53.253 23.841-53.253 53.251l0 404.116L55.975 459.367c-29.411 0-53.253 23.841-53.253 53.25 0 29.41 23.842 53.253 53.253 53.253l404.133 0 0 404.115c0 29.407 23.842 53.249 53.253 53.249 29.41 0 53.253-23.842 53.253-53.249L566.614 565.87l404.131 0c29.413 0 53.255-23.843 53.255-53.253C1024 483.208 1000.158 459.367 970.745 459.367z"
-                p-id="1205"></path>
-            </svg>
-          </a>
-        </div>
-        <span class="d-flex flex-column align-items-end">
-          <small>           
-            Thành tiền
-          </small>
-          <h3 class="total-items-price">320,000đ</h3>
-        </span>
-      </div>
-       <a class="btn-food mt-5 w-100">
-        <svg t="1585835178245" class="icon" fill="currentColor" viewBox="0 0 1024 1024" version="1.1"
-          xmlns="http://www.w3.org/2000/svg" p-id="1204" width="14" height="14">
-          <path
-            d="M970.745 459.367 566.614 459.367 566.614 55.251C566.614 25.842 542.771 2 513.361 2c-29.411 0-53.253 23.841-53.253 53.251l0 404.116L55.975 459.367c-29.411 0-53.253 23.841-53.253 53.25 0 29.41 23.842 53.253 53.253 53.253l404.133 0 0 404.115c0 29.407 23.842 53.249 53.253 53.249 29.41 0 53.253-23.842 53.253-53.249L566.614 565.87l404.131 0c29.413 0 53.255-23.843 53.255-53.253C1024 483.208 1000.158 459.367 970.745 459.367z"
-            p-id="1205"></path>
-        </svg>
-        Add to order
-      </a>
-    </div>
-
-  </div>
+ 
   <div class="loading-add">
                 <strong>x1</strong> Đã được thêm
               </div>

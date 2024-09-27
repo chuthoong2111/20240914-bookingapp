@@ -1,25 +1,59 @@
-// Get the modal
-var modal = document.getElementById("myModal");
+document.addEventListener("DOMContentLoaded", function () {
+  // Attach event listeners to all elements with data-target attributes
+  document.querySelectorAll('[data-target]').forEach(element => {
+      element.addEventListener('click', function () {
+          const targetModalId = this.getAttribute('data-target');
+          const iframeId = this.getAttribute('data-iframe');
+          const iframeSrc = this.getAttribute('data-src');
+          const dimensions = this.getAttribute('data-dimensions');
+          const reloadPage = this.getAttribute('data-reload') === "1";
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+          // Open the modal by setting display to block
+          const modal = document.getElementById(targetModalId);
+          if (modal) {
+              modal.style.display = 'block';
+              // Disable body scroll
+              document.body.classList.add('modal-open');
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+              // Apply dimensions to modal-window
+              const modalWindow = modal.querySelector('.modal-window');
+              if (dimensions) {
+                  dimensions.split(';').forEach(styleRule => {
+                      const [key, value] = styleRule.split(':');
+                      modalWindow.style[key.trim()] = value.trim();
+                  });
+              }
 
-// When the user clicks on the button, open the modal
-btn.onclick = function () {
-  modal.style.display = "block";
-};
+              // Set iframe source if applicable
+              if (iframeId && iframeSrc) {
+                  const iframe = document.getElementById(iframeId);
+                  if (iframe) iframe.src = iframeSrc;
+              }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-  modal.style.display = "none";
-};
+              // Close modal logic for all dismiss buttons
+              modal.querySelectorAll('[data-dismiss="modal"]').forEach(closeButton => {
+                  closeButton.addEventListener('click', function () {
+                      modal.style.display = 'none';
+                      // Enable body scroll again
+                      document.body.classList.remove('modal-open');
+                      if (reloadPage) {
+                          window.location.reload();
+                      }
+                  });
+              });
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
+              // Close the modal if clicking outside the modal-window
+              modal.addEventListener('click', function (event) {
+                  if (event.target === modal) {
+                      modal.style.display = 'none';
+                      // Enable body scroll again
+                      document.body.classList.remove('modal-open');
+                      if (reloadPage) {
+                          window.location.reload();
+                      }
+                  }
+              });
+          }
+      });
+  });
+});
