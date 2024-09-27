@@ -548,6 +548,18 @@ a.delete {
   color: var(--red);
 }
 
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-sticky {
+  position: sticky;
+}
+
 img {
   max-width: 100%;
   vertical-align: middle;
@@ -777,11 +789,6 @@ img {
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.05);
   transition: 0.3s;
 }
-.category-list__item svg {
-  margin-top: 0.75rem;
-  width: 2.5rem;
-  height: 2.5rem;
-}
 .category-list__item a {
   display: flex;
   flex-direction: column;
@@ -799,8 +806,13 @@ img {
   border-radius: 50%;
 }
 .category-list__item .category-icon svg {
-  fill: black;
-  transform: scale(1.2);
+  fill: var(--brand-color);
+  margin-top: 0.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.category-list__item .category-icon svg g {
+  fill: var(--brand-color);
 }
 .category-list__item .category-name {
   padding: 1rem 0 1.5rem;
@@ -821,6 +833,18 @@ img {
   align-items: center;
   padding: 10px;
   border-radius: 15px;
+}
+.category-more-btn.back {
+  border: 0;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.category-more-btn.back svg {
+  transform: rotate(180deg);
 }
 
 .restaurant-list {
