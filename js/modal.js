@@ -1,59 +1,45 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Attach event listeners to all elements with data-target attributes
-  document.querySelectorAll('[data-target]').forEach(element => {
-      element.addEventListener('click', function () {
-          const targetModalId = this.getAttribute('data-target');
-          const iframeId = this.getAttribute('data-iframe');
-          const iframeSrc = this.getAttribute('data-src');
-          const dimensions = this.getAttribute('data-dimensions');
-          const reloadPage = this.getAttribute('data-reload') === "1";
+ // Function to open the modal
+ function openModal(element) {
+  const modalId = element.getAttribute('data-target');
+  const dimensions = element.getAttribute('data-dimensions');
+  const modal = document.getElementById(modalId);
 
-          // Open the modal by setting display to block
-          const modal = document.getElementById(targetModalId);
-          if (modal) {
-              modal.style.display = 'block';
-              // Disable body scroll
-              document.body.classList.add('modal-open');
+  // Set modal dimensions
+  const [width, height] = dimensions.split(';').map(d => d.split(':')[1].trim());
+  modal.querySelector('.modal-window').style.width = width;
+  modal.querySelector('.modal-window').style.height = height;
 
-              // Apply dimensions to modal-window
-              const modalWindow = modal.querySelector('.modal-window');
-              if (dimensions) {
-                  dimensions.split(';').forEach(styleRule => {
-                      const [key, value] = styleRule.split(':');
-                      modalWindow.style[key.trim()] = value.trim();
-                  });
-              }
+  // Show modal
+  modal.style.display = "block";
+}
 
-              // Set iframe source if applicable
-              if (iframeId && iframeSrc) {
-                  const iframe = document.getElementById(iframeId);
-                  if (iframe) iframe.src = iframeSrc;
-              }
+// Function to close the modal
+function closeModal() {
+  const modals = document.getElementsByClassName('modal');
+  for (let modal of modals) {
+      modal.style.display = "none";
+  }
+}
 
-              // Close modal logic for all dismiss buttons
-              modal.querySelectorAll('[data-dismiss="modal"]').forEach(closeButton => {
-                  closeButton.addEventListener('click', function () {
-                      modal.style.display = 'none';
-                      // Enable body scroll again
-                      document.body.classList.remove('modal-open');
-                      if (reloadPage) {
-                          window.location.reload();
-                      }
-                  });
-              });
-
-              // Close the modal if clicking outside the modal-window
-              modal.addEventListener('click', function (event) {
-                  if (event.target === modal) {
-                      modal.style.display = 'none';
-                      // Enable body scroll again
-                      document.body.classList.remove('modal-open');
-                      if (reloadPage) {
-                          window.location.reload();
-                      }
-                  }
-              });
-          }
-      });
+// Add event listeners to trigger elements
+document.querySelectorAll('.trigger-element').forEach(trigger => {
+  trigger.addEventListener('click', function() {
+      openModal(this);
   });
 });
+ // Close modal when clicking the close button or a dismiss attribute
+ document.querySelectorAll('[data-dismiss="modal"]').forEach(dismiss => {
+  dismiss.addEventListener('click', closeModal);
+});
+// Close modal when clicking the close button
+document.querySelector('.close-modal').addEventListener('click', closeModal);
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+  const modals = document.getElementsByClassName('modal');
+  for (let modal of modals) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+}

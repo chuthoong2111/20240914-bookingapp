@@ -75,7 +75,7 @@
         <h3 class="total-items-price">320,000đ</h3>
       </span>
     </div>
-     <a class="btn-food mt-3 mb-4 w-100">
+     <a class="btn-food my-5 w-100" data-dismiss="modal">
       <svg t="1585835178245" class="icon" fill="currentColor" viewBox="0 0 1024 1024" version="1.1"
         xmlns="http://www.w3.org/2000/svg" p-id="1204" width="14" height="14">
         <path
@@ -95,12 +95,17 @@
       <ul class="restaurant-list">
         <li class="restaurant-list__item">
          
-          <a data-target="modal-id" data-toggle="modal"
-          data-dimensions="width:86vw; height:80vh"><span class="restaurant-image d-block"
-              style="background-image: url(https://placehold.jp/640x480.png);"></span></a>
+          <a class="trigger-element" data-target="modal-id" data-toggle="modal"
+          data-dimensions="width:86vw; height:80vh">
+          
+          <span class="restaurant-image d-block"
+              style="background-image: url(https://placehold.jp/640x480.png);">
+            
+            </span>
+            </a>
           <div class="restaurant-info">
-            <a data-target="modal-id" data-toggle="modal"
-            data-dimensions="width:86vw; height:80vh" class="restaurant-name">Bagel Story</a>
+            <a  data-target="modal-id" data-toggle="modal"
+            data-dimensions="width:86vw; height:80vh" class="trigger-element restaurant-name">Bagel Story</a>
             <div class="restaurant-category">Dự kiến: 10 - 15 munite</div>
             <div class="d-flex justify-content-between align-items-center">
               <span class="restaurant-price">40,000đ/c</span>

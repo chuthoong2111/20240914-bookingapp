@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Trigger Modal Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+        }
+
+        .modal-window {
+            position: relative;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px; /* Set max width for modal */
+            padding: 20px;
+        }
+
+        .close-modal {
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .trigger-element {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .trigger-element:hover {
+            background-color: #0056b3;
+        }
+
+        /* Additional styles for modal content */
+        .modal-content img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+
+        .modal-content h2 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .modal-content .total-items-price {
+            color: #e60000; /* Price color */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Trigger Elements -->
+    <div class="trigger-element" data-target="modal-id" data-dimensions="width:400px;height:400px">Open Modal from Trigger 1</div>
+    <div class="trigger-element" data-target="modal-id" data-dimensions="width:400px;height:400px">Open Modal from Trigger 2</div>
+    <span class="trigger-element" data-target="modal-id" data-dimensions="width:400px;height:400px">Open Modal from Trigger 3</span>
+
+    <!-- Modal HTML -->
+    <div id="modal-id" class="modal">
+        <div class="modal-window">
+            <div class="close-modal" data-dismiss="modal">&times;</div>
+            <!-- Modal content -->
+            <div class="modal-content">
+                <img class="maxw-100 rounded-4" src="https://placehold.jp/640x480.png" alt="Placeholder Image" />
+                <h2 class="mt-3 mb-2 color-primary">Bagel Story</h2>
+                <span class="restaurant-category">Dự kiến: 10 - 15 minutes</span>
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="restaurant-price">40,000đ/c</span>
+
+                    <div class="input-group input-spinner">
+                        <a class="btn minus" onclick="document.querySelector('#count').value--">
+                            <svg class="icon" viewBox="0 0 1025 1024" fill="currentColor" width="14" height="14">
+                                <path d="M973.154 563.218 51.222 563.218c-28.275 0-51.222-22.946-51.222-51.214 0-28.276 22.946-51.222 51.222-51.222L973.154 460.782c28.33 0 51.222 22.946 51.222 51.222C1024.375 540.272 1001.484 563.218 973.154 563.218L973.154 563.218z"></path>
+                            </svg>
+                        </a>
+                        <input type="text" readonly="" value="1" class="form-control" id="count">
+                        <a class="btn plus" onclick="document.querySelector('#count').value++">
+                            <svg class="icon" viewBox="0 0 1024 1024" fill="currentColor" width="14" height="14">
+                                <path d="M970.745 459.367 566.614 459.367 566.614 55.251C566.614 25.842 542.771 2 513.361 2c-29.411 0-53.253 23.841-53.253 53.251l0 404.116L55.975 459.367c-29.411 0-53.253 23.841-53.253 53.25 0 29.41 23.842 53.253 53.253 53.253l404.133 0 0 404.115c0 29.407 23.842 53.249 53.253 53.249 29.41 0 53.253-23.842 53.253-53.249L566.614 565.87l404.131 0c29.413 0 53.255-23.843 53.255-53.253C1024 483.208 1000.158 459.367 970.745 459.367z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <span class="d-flex flex-column align-items-end">
+                        <small>           
+                            Thành tiền
+                        </small>
+                        <h3 class="total-items-price">320,000đ</h3>
+                    </span>
+                </div>
+
+                <a class="btn-food my-5 w-100">
+                    Add to order
+                </a>
+                <div class="dec">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus exercitationem possimus dicta saepe voluptates, corrupti aliquid, commodi molestias nisi rerum incidunt esse nulla odit minus quae excepturi repellat id. Veritatis.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to open the modal
+        function openModal(element) {
+            const modalId = element.getAttribute('data-target');
+            const modal = document.getElementById(modalId);
+
+            // Show modal
+            modal.style.display = "block";
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            const modals = document.getElementsByClassName('modal');
+            for (let modal of modals) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Add event listeners to trigger elements
+        document.querySelectorAll('.trigger-element').forEach(trigger => {
+            trigger.addEventListener('click', function() {
+                openModal(this);
+            });
+        });
+
+        // Close modal when clicking the close button
+        document.querySelector('.close-modal').addEventListener('click', closeModal);
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modals = document.getElementsByClassName('modal');
+            for (let modal of modals) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
