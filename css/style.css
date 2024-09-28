@@ -579,6 +579,10 @@ a.delete {
   position: sticky;
 }
 
+.overlay-hidden {
+  overflow: hidden;
+}
+
 img {
   max-width: 100%;
   vertical-align: middle;
@@ -1226,7 +1230,8 @@ body.modal-open {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 0.5rem;
+  border-radius: 1.5rem;
+  padding: 1rem;
 }
 .modal-window.modal-top {
   top: 15%;
@@ -1264,7 +1269,6 @@ body.modal-open {
 .modal-content {
   overflow-y: auto;
   height: 100%;
-  padding: 1rem;
 }
 .modal-content .restaurant-category + .d-flex {
   flex-wrap: wrap;
@@ -1310,6 +1314,9 @@ body.modal-open {
   gap: 0.5rem;
   align-items: center;
   width: 100%;
+}
+.btn-food:hover {
+  background: var(--brand-color);
 }
 .btn-food .total-items-price {
   font-size: 0.8rem;

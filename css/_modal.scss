@@ -26,7 +26,8 @@
     left: 50%;
     top:50%;
     transform: translate(-50%,-50%);
-    border-radius: 0.5rem;
+    border-radius: 1.5rem;
+    padding: 1rem;
     &.modal-top{
       top: 15%;
       transform: translate(-50%,-15%);
@@ -64,8 +65,7 @@
 
 .modal-content {
   overflow-y: auto;
-  height: 100%;
-  padding: 1rem;
+  height: 100%;  
     .restaurant-category + .d-flex{
         flex-wrap: wrap;
     }
@@ -109,6 +109,9 @@
     gap: .5rem;
     align-items: center;
     width: 100%;
+    &:hover{
+      background: var(--brand-color);
+    }
     .total-items-price{
         font-size: .8rem;
         font-weight: 400;
