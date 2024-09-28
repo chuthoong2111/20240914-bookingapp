@@ -1149,7 +1149,6 @@ body:has(.button-cart) {
 
 .bar-title {
   border: 1px solid var(--light-gray);
-  border-width: 1px 0;
   padding: 0.75rem 1rem;
   background-color: var(--light-bgr);
 }
