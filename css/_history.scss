@@ -1,0 +1,47 @@
+.history{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    &__item{
+        padding: 1rem 0;
+        list-style: none;
+        border-bottom: 1px solid var(--light-gray);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        svg{
+            margin: 0 1rem 0 2rem;
+        }
+    }
+}
+.canlendar-mini{
+    border-radius: 1rem;
+    box-shadow: 1px 1px 8px var(--shadow-gray);
+    padding: .5rem;
+    min-width: 5.2rem;
+    border: 1px solid var(--light-bgr);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: .15rem;
+    .number{
+        color:  var(--brand-color);
+        font-size: 1rem;
+    }
+    .day{
+        font-size: .8rem;
+        text-transform: uppercase;
+    }
+    .month{
+        font-size: .8rem;
+    }
+}
+.line-guest{
+    font-size: 90%;
+}
+.line-info{
+    font-size: 90%;
+}
+.total-price{
+    color: var(--brand-food);
+}

@@ -19,7 +19,7 @@
 }
 /* custom scrollbar */
 ::-webkit-scrollbar {
-  width: 0;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -128,7 +128,9 @@ $rules: (
   px padding,
   py padding,
   // class
-  rounded border-radius
+  rounded border-radius,
+  // class
+  gap gap,
 );
 
 @each $label, $prop in $rules {

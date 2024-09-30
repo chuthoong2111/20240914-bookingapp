@@ -78,6 +78,7 @@
     border: 0;
     width: 40px;
     height: 40px;
+    background: var(--light-bgr);
     position: absolute;
     left: 1.5rem;
     top: 50%;
@@ -85,6 +86,7 @@
 
     svg {
       transform: rotate(180deg);
+      fill: #888;
     }
   }
 }

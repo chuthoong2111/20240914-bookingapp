@@ -1,7 +1,6 @@
 .restaurant-list {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     padding: 0;
     margin: 0 auto;
     list-style-type: none;
@@ -22,14 +21,14 @@
             object-fit: cover;
             background-size: cover;
             background-position: center;
+            flex-shrink: 0;
             .cart &{
                 width: 4.4rem;
-                height: 4.4rem;
+                height: 4.4rem;                
             }
         }
 a.edit {
     color: var(--brand-food);
-    padding: .5rem 0 0;
 }
         .restaurant-name {
             font-weight: 700;
@@ -41,7 +40,7 @@ a.edit {
                     }
                 }
         }
-
+       
         .restaurant-info {
             margin: .25rem 1rem;
             display: flex;
@@ -155,7 +154,8 @@ a.edit {
     .form-control {
         font-size: .8rem;
         box-sizing: border-box;
-        max-width: 48px;
+        max-width: 40px;
+        height: 2rem;
         text-align: center;
         border: 0;
     }
@@ -183,3 +183,61 @@ a.edit {
     left: 50%;
     transform: translateX(-50%);
 }
+.horizontal-snap {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    padding: 1rem;
+    max-width: 600px;
+    overflow: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    &::-webkit-scrollbar {
+        height: 4px;
+      }
+      
+      &::-webkit-scrollbar-track {
+        background-color: #eee;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background-color: #d6dee1;
+        border-radius: 12px;
+        // border: 2px solid transparent;
+        background-clip: content-box;
+      }
+      
+      &::-webkit-scrollbar-thumb:hover {
+        background-color: #a8bbbf;
+      }
+  }
+  
+  .horizontal-snap > .btn {
+    white-space: nowrap;
+    padding: .5rem  1rem;
+    font-size: 90%;
+    border-radius: 2rem;
+    background: var(--light-bgr);
+    scroll-snap-align: center; /* or start, end */
+    color: var(--brand-color);
+    &.active{
+        background: var(--brand-color);
+        color:#fff ;
+    }
+  }
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .thankpage a{
+    color: var(--brand-color);
+    margin: 1rem;
+    display: inline-block;
+    text-decoration: underline;
+    &:hover{
+        color: var(--brand-food);
+    }
+  }
