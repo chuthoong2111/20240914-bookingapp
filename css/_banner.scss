@@ -212,3 +212,27 @@ img {
 .swiper-slide.is-active .people__card__image {
     transform: translateX(100px);
 }
+.top-bar{
+background: var(--light-bgr);
+display: flex;
+justify-content: space-between;
+padding: .5rem 1rem;
+}
+.lang{
+    list-style: none;
+    li{
+        list-style: none;
+    }
+    a{
+        font-size: 80%;
+        line-height: 1;
+        color: #888;
+        padding: .25rem .5rem;
+        border-radius: .25rem;
+        &.active{
+            background-color: var(--brand-color);
+            color: #fff;
+        }
+    }
+   
+}

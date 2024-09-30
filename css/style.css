@@ -607,6 +607,10 @@ a.delete {
   overflow: hidden;
 }
 
+.lh-1 {
+  line-height: 1;
+}
+
 img {
   max-width: 100%;
   vertical-align: middle;
@@ -819,6 +823,31 @@ img {
 
 .swiper-slide.is-active .people__card__image {
   transform: translateX(100px);
+}
+
+.top-bar {
+  background: var(--light-bgr);
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.lang {
+  list-style: none;
+}
+.lang li {
+  list-style: none;
+}
+.lang a {
+  font-size: 80%;
+  line-height: 1;
+  color: #888;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+.lang a.active {
+  background-color: var(--brand-color);
+  color: #fff;
 }
 
 .categories {
@@ -1504,7 +1533,7 @@ body.modal-open {
   border-bottom: 1px solid var(--light-gray);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
 }
 .history__item svg {
   margin: 0 1rem 0 2rem;
