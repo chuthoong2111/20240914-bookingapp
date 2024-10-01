@@ -11,6 +11,8 @@
 
   // Show modal
   modal.style.display = "block";
+   // Disable body scroll
+   document.body.style.overflow = "hidden";
 }
 
 // Function to close the modal
@@ -19,6 +21,8 @@ function closeModal() {
   for (let modal of modals) {
       modal.style.display = "none";
   }
+  // Restore body scroll
+  document.body.style.overflow = "";
 }
 
 // Add event listeners to trigger elements

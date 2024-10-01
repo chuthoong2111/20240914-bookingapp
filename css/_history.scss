@@ -5,10 +5,11 @@
     &__item{
         padding: 1rem 0;
         list-style: none;
-        border-bottom: 1px solid var(--light-gray);
+        border-bottom: 1px solid var(--light-bgr);
         display: flex;
         justify-content: space-between;
         align-items: start;
+        color: var(--black);
         svg{
             margin: 0 1rem 0 2rem;
         }
