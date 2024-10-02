@@ -73,9 +73,10 @@ body:has(.button-cart) {
   position: relative;
 }
 .bar-title{
+  align-items: center;
   border: 1px solid var(--light-gray);
   padding:.25rem .75rem;
-  font-size: 80%;
+  font-size: 90%;
   background-color: var(--light-bgr);
   strong{
     font-weight: 400;
