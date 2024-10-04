@@ -1,0 +1,49 @@
+.c-pill {
+    align-items: center;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 1;
+    display: inline-block;
+    height: 100%;
+    white-space: nowrap;
+    width: auto;
+  
+    position: relative;
+    border-radius: 100px;
+    line-height: 1;
+    overflow: hidden;
+    padding: 0px 12px 0px 18px;
+    text-overflow: ellipsis;
+      line-height: 1.25rem;
+      color: #333;
+      
+      word-break: break-word;
+  
+    &:before {
+      border-radius: 50%;
+      content: '';
+      width: 7px;
+      height: 7px;
+      left: 6px;
+      transform: translateY(-50%);
+      position: absolute;
+      top: 50%;
+      
+    }
+    
+   
+  }
+  
+  
+    .c-pill--success {
+      background: #b4eda0; }
+      .c-pill--success:before {
+        background: #6BC167; }
+    .c-pill--warning {
+      background: #ffebb6; }
+      .c-pill--warning:before {
+        background: #ffc400; }
+    .c-pill--danger {
+      background: #ffd5d1; }
+      .c-pill--danger:before {
+        background: #ff4436; }

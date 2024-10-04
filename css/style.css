@@ -1394,6 +1394,10 @@ body:has(.button-cart) {
   border: 0;
   background-color: var(--light-bgr);
 }
+.form-control.readonly.danger {
+  background-color: rgba(255, 90, 84, 0.1);
+  color: #8b3023;
+}
 
 * {
   font-family: sans-serif;
@@ -1528,6 +1532,60 @@ body.modal-open {
     opacity: 1;
   }
 }
+.c-pill {
+  align-items: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1;
+  display: inline-block;
+  height: 100%;
+  white-space: nowrap;
+  width: auto;
+  position: relative;
+  border-radius: 100px;
+  line-height: 1;
+  overflow: hidden;
+  padding: 0px 12px 0px 18px;
+  text-overflow: ellipsis;
+  line-height: 1.25rem;
+  color: #333;
+  word-break: break-word;
+}
+.c-pill:before {
+  border-radius: 50%;
+  content: "";
+  width: 7px;
+  height: 7px;
+  left: 6px;
+  transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+}
+
+.c-pill--success {
+  background: #b4eda0;
+}
+
+.c-pill--success:before {
+  background: #6BC167;
+}
+
+.c-pill--warning {
+  background: #ffebb6;
+}
+
+.c-pill--warning:before {
+  background: #ffc400;
+}
+
+.c-pill--danger {
+  background: #ffd5d1;
+}
+
+.c-pill--danger:before {
+  background: #ff4436;
+}
+
 .history {
   list-style: none;
   margin: 0;
@@ -1544,6 +1602,9 @@ body.modal-open {
 }
 .history__item svg {
   margin: 0 1rem 0 2rem;
+}
+.history__item .info {
+  text-align: right;
 }
 
 .canlendar-mini {

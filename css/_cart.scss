@@ -128,5 +128,10 @@ body:has(.button-cart) {
   &.readonly{
     border: 0;
     background-color: var(--light-bgr);
+    &.danger{
+      background-color: rgba($color: #FF5A54, $alpha: .1);
+      color: #8b3023;
+    }
   }
+
 }
