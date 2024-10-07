@@ -1361,7 +1361,6 @@ body:has(.button-cart) {
 
 .bar-title {
   align-items: center;
-  border: 1px solid var(--light-gray);
   padding: 0.25rem 0.75rem;
   font-size: 90%;
   background-color: var(--light-bgr);
