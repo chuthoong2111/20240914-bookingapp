@@ -864,7 +864,7 @@ img {
   list-style: none;
 }
 .lang a {
-  font-size: 80%;
+  font-size: 75%;
   line-height: 1;
   color: #888;
   padding: 0.25rem 0.5rem;
@@ -1567,7 +1567,7 @@ body.modal-open {
   white-space: nowrap;
   width: auto;
   position: relative;
-  border-radius: 100px;
+  border-radius: 0.25rem;
   line-height: 1;
   overflow: hidden;
   padding: 0px 12px 0px 18px;
@@ -1617,7 +1617,7 @@ body.modal-open {
   padding: 0;
 }
 .history__item {
-  padding: 1rem 0;
+  padding: 1rem;
   list-style: none;
   border-bottom: 1px solid var(--light-bgr);
   display: flex;
@@ -1636,7 +1636,7 @@ body.modal-open {
   border-radius: 1rem;
   box-shadow: 1px 1px 8px var(--shadow-gray);
   padding: 0.5rem;
-  min-width: 5.2rem;
+  min-width: 4.5rem;
   border: 1px solid var(--light-bgr);
   display: flex;
   align-items: center;
@@ -1645,14 +1645,16 @@ body.modal-open {
 }
 .canlendar-mini .number {
   color: var(--brand-color);
-  font-size: 1rem;
+  font-size: 90%;
+  line-height: 1.1;
 }
 .canlendar-mini .day {
-  font-size: 0.8rem;
-  text-transform: uppercase;
+  font-size: 90%;
+  line-height: 1.1;
 }
 .canlendar-mini .month {
-  font-size: 0.8rem;
+  font-size: 90%;
+  line-height: 1.1;
 }
 
 .line-guest {
