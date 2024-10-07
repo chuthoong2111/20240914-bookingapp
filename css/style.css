@@ -611,6 +611,31 @@ a.delete {
   line-height: 1;
 }
 
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: gray white;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: gray;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 20px;
+  border: 3px solid gray;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 img {
   max-width: 100%;
   vertical-align: middle;
