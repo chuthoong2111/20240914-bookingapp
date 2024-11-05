@@ -1293,6 +1293,66 @@ canvas {
   background-color: var(--light-gray);
 }
 
+.step-home {
+  margin: 0 0 0 0.5rem;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+.step-home li {
+  padding: 0.15rem 1.5rem 2rem 2rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+.step-home li::before {
+  height: 100%;
+  top: 0;
+  left: 2px;
+  position: absolute;
+  width: 3px;
+  background: #ddd;
+  content: "";
+  display: block;
+}
+.step-home li::after {
+  position: absolute;
+  bottom: 0;
+  left: -1px;
+  border: solid #ddd;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  content: "";
+  transform: rotate(45deg);
+  display: block;
+}
+.step-home li:last-child::before, .step-home li:last-child::after {
+  display: none;
+}
+.step-home li .number {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid var(--brand-color);
+  position: absolute;
+  top: 0;
+  left: -9px;
+  transition: all ease-in-out 0.3s;
+  font-size: 0.8rem;
+  color: var(--brand-color);
+}
+.step-home li:hover .number {
+  background-color: var(--brand-color);
+  color: #fff;
+}
+.step-home li:hover .step-content {
+  color: var(--brand-color);
+}
+
 .button-cart {
   position: fixed;
   width: 100%;
